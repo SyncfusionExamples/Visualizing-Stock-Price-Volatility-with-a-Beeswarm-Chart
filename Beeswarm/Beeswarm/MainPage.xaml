@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Toolkit.Charts;assembly=Syncfusion.Maui.Toolkit" 
+             xmlns:model="clr-namespace:Beeswarm"
+             x:Class="Beeswarm.MainPage">
+    <Border Margin="20" 
+        Padding="0" 
+        StrokeThickness="0" 
+        BackgroundColor="White"
+        StrokeShape="RoundRectangle 20">
+ 
+        <Border.Shadow>
+            <Shadow Brush="Black" Opacity="0.1" Radius="15" Offset="0,5"/>
+        </Border.Shadow>
+
+        <Grid> 
+  
+            <Border 
+                BackgroundColor="White"  
+                StrokeShape="RoundRectangle 0,0,20,20">
+
+                <chart:SfCartesianChart HorizontalOptions="Fill" 
+                                    VerticalOptions="FillAndExpand"
+                                    BackgroundColor="White">
+                    <chart:SfCartesianChart.Title>
+                        <Border
+    BackgroundColor="#2E3440" 
+    StrokeShape="RoundRectangle 20,20,0,0"
+    Padding="20,15">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+ 
+                                <Border Grid.Column="0"
+            BackgroundColor="#5E81AC" 
+            WidthRequest="50" 
+            HeightRequest="50"
+            StrokeShape="RoundRectangle 10"
+            VerticalOptions="Center"
+            Margin="0,0,15,0">
+                                    <Label Text="🌍" 
+               FontSize="24" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"/>
+                                </Border>
+ 
+                                <StackLayout Grid.Column="1" 
+                 VerticalOptions="Center" 
+                 Spacing="3">
+ 
+                                    <Label Text="Beeswarm Visualization: Nations Breaking Free Since 1900"
+               FontSize="{OnPlatform Android=14,Default=18,iOS=14}" 
+               FontAttributes="Bold"
+               TextColor="#ECEFF4" 
+               LineBreakMode="TailTruncation"/>
+ 
+                                    <Label Text="Discover which colonial powers ruled these 100+ nations before independence since 1900 • Interactive timeline"
+               FontSize="{OnPlatform Android=10,Default=12,iOS=10}" 
+               TextColor="#88C0D0" 
+               LineBreakMode="TailTruncation"/>
+                                </StackLayout>
+ 
+                                <Border Grid.Column="2"
+            BackgroundColor="#A3BE8C" 
+            StrokeShape="RoundRectangle 6"
+            Padding="10,6"
+            VerticalOptions="Center">
+                                    <StackLayout Spacing="1">
+                                        <Label Text="100+" 
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   TextColor="White" 
+                   HorizontalOptions="Center"/>
+                                        <Label Text="Nations" 
+                   FontSize="8" 
+                   TextColor="White" 
+                   HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </chart:SfCartesianChart.Title>
+                    <chart:SfCartesianChart.BindingContext>
+                        <model:BeeswarmViewModel/>
+                    </chart:SfCartesianChart.BindingContext>
+
+                    <chart:SfCartesianChart.TooltipBehavior>
+                        <chart:ChartTooltipBehavior TextColor="White" 
+                                                Margin="5"/>
+                    </chart:SfCartesianChart.TooltipBehavior>
+ 
+                    <chart:SfCartesianChart.XAxes>
+                        <chart:NumericalAxis ShowMajorGridLines="True" 
+                                         Interval="10" 
+                                         Minimum="1900" 
+                                         Maximum="2010"
+                                         PlotOffsetStart="15" 
+                                         PlotOffsetEnd="30"
+                                         EdgeLabelsDrawingMode="Shift">
+                            <chart:NumericalAxis.Title>
+                                <chart:ChartAxisTitle Text="Independence Year" 
+                                                  TextColor="#2E3440"
+                                                  FontSize="14"
+                                                  FontAttributes="Bold"/>
+                            </chart:NumericalAxis.Title>
+                            <chart:NumericalAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle TextColor="Black" 
+                                                       FontSize="12"/>
+                            </chart:NumericalAxis.LabelStyle>
+                            <chart:NumericalAxis.AxisLineStyle>
+                                <chart:ChartLineStyle Stroke="#D8DEE9" 
+                                                  StrokeWidth="2"/>
+                            </chart:NumericalAxis.AxisLineStyle>
+                            <chart:NumericalAxis.MajorTickStyle>
+                                <chart:ChartAxisTickStyle Stroke="#D8DEE9" 
+                                                      StrokeWidth="1"/>
+                            </chart:NumericalAxis.MajorTickStyle>
+                            <chart:NumericalAxis.MajorGridLineStyle>
+                                <chart:ChartLineStyle Stroke="#ECEFF4" 
+                                                  StrokeWidth="1"/>
+                            </chart:NumericalAxis.MajorGridLineStyle>
+                        </chart:NumericalAxis>
+                    </chart:SfCartesianChart.XAxes>
+ 
+                    <chart:SfCartesianChart.YAxes>
+                        <chart:NumericalAxis Maximum="2" 
+                                         Minimum="0" 
+                                         ShowMajorGridLines="False" 
+                                         IsVisible="False" 
+                                         PlotOffsetStart="35"
+                                         PlotOffsetEnd="25">
+                        </chart:NumericalAxis>
+                    </chart:SfCartesianChart.YAxes>
+ 
+                    <model:ScatterExt XBindingPath="IndependenceYear" 
+                                  YBindingPath="JitteredPosition" 
+                                  EnableTooltip="True" 
+                                  Stroke="Black"  
+                                  StrokeWidth="1"
+                                  PointHeight="25"
+                                  PointWidth="25"
+                                  ItemsSource="{Binding BeeswarmData}" 
+                                  EnableAnimation="True">
+ 
+                        <chart:ScatterSeries.TooltipTemplate>
+                            <DataTemplate>
+                                <Border BackgroundColor="#2E3440" 
+                                        StrokeShape="RoundRectangle 12"
+                                        Padding="16,12">    
+                                    <Border.Shadow>
+                                        <Shadow Brush="Black" Opacity="0.3" Radius="8" Offset="0,4"/>
+                                    </Border.Shadow>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+ 
+                                        <Label Grid.Row="0" 
+                                               Text="{Binding Item.CountryName}" 
+                                               FontSize="16" 
+                                               FontAttributes="Bold"
+                                               TextColor="#ECEFF4" 
+                                               HorizontalOptions="Center" 
+                                               Margin="0,0,0,8"/>   
+ 
+                                        <BoxView Grid.Row="1" 
+                                                 BackgroundColor="#5E81AC" 
+                                                 HeightRequest="2" 
+                                                 HorizontalOptions="Fill"
+                                                 Margin="0,0,0,8"/>     
+ 
+                                        <StackLayout Grid.Row="2" Spacing="4">
+                                            <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                                                <Label Text="🗓️" FontSize="14"/>
+                                                <Label Text="{Binding Item.IndependenceYear, StringFormat='Independence: {0}'}" 
+                                                       TextColor="#D8DEE9" 
+                                                       FontSize="14"/>          
+                                            </HorizontalStackLayout>
+ 
+                                            <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                                                <Label Text="🏛️" FontSize="14"/>
+                                                <Label Text="{Binding Item.IndependenceFrom, StringFormat='From: {0}'}" 
+                                                       TextColor="#88C0D0" 
+                                                       FontSize="12"  />        
+                                            </HorizontalStackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </chart:ScatterSeries.TooltipTemplate>
+                    </model:ScatterExt>
+                </chart:SfCartesianChart>
+            </Border>
+        </Grid>
+    </Border>
+</ContentPage>

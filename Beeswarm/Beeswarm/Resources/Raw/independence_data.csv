@@ -1,0 +1,197 @@
+country,continent,year,day,month,independence_from
+Afghanistan,Asia,1919,19,August,United Kingdom
+Albania,Europe,1912,28,November,Ottoman Empire
+Algeria,Africa,1962,5,July,France
+Andorra,Europe,1278,8,September,France and Spain
+Angola,Africa,1975,11,November,Portugal
+Antigua and Barbuda,North America,1981,1,November,United Kingdom
+Argentina,South America,1816,9,July,Spain
+Armenia,Asia,1991,21,September,Soviet Union
+Australia,Oceania,1901,1,January ,United Kingdom
+Austria,Europe,1955,26,October,Allied-occupied Austria
+Azerbaijan,Asia,1991,18,October,Soviet Union
+Bahamas,North America,1973,10,July,United Kingdom
+Bahrain,Asia,1971,16,December,United Kingdom
+Bangladesh,Asia,1971,26,March,Pakistan
+Barbados,North America,1966,30,November,United Kingdom
+Belarus,Europe,1991,25,August,Soviet Union
+Belgium,Europe,1830,4,October,Netherlands
+Belize,North America,1981,21,September,United Kingdom
+Benin,Africa,1960,1,August,France
+Bhutan,Asia,1949,8,August,United Kingdom
+Bolivia,South America,1825,6,August,Spain
+Bosnia and Herzegovina,Europe,1992,1,March,Yugoslavia
+Botswana,Africa,1966,30,September,United Kingdom
+Brazil,South America,1822,7,September,Portugal
+Brunei,Asia,1984,1,January ,United Kingdom
+Bulgaria,Europe,1908,22,September,Ottoman Empire
+Burkina Faso,Africa,1960,5,August,France
+Burundi,Africa,1962,1,July,Belgium
+Cabo Verde,Africa,1975,5,July,Portugal
+Cambodia,Asia,1953,9,November,France
+Cameroon,Africa,1960,1,January ,France
+Canada,North America,1867,1,July,United Kingdom
+Central African Republic,Africa,1960,31,August,France
+Chad,Africa,1960,11,August,France
+Chile,South America,1818,12,February ,Spain
+China,Asia,1949,1,October,self-declared
+Colombia,South America,1810,20,July,Spain
+Comoros,Africa,1975,6,July,France
+Republic of Congo ,Africa,1960,15,August,France
+Democratic Republic of the Congo,Africa,1960,30,June,Belgium
+Costa Rica,North America,1821,15,September,Spain
+Croatia,Europe,1991,25,June,Yugoslavia
+Cuba,North America,1902,20,May,United States
+Cyprus,Asia,1960,1,October,United Kingdom
+Czech Republic,Europe,1993,1,January ,Czechoslovakia
+Denmark,Europe,1945,5,May,Germany
+Djibouti,Africa,1977,27,June,France
+Dominica,North America,1978,3,November,United Kingdom
+Dominican Republic,North America,1844,27,February ,Haiti
+Ecuador,South America,1822,24,May,Spain
+Egypt,Africa,1922,28,February ,United Kingdom
+El Salvador,North America,1821,15,September,Spain
+Equatorial Guinea,Africa,1968,12,October,Spain
+Eritrea,Africa,1993,24,May,Ethiopia
+Estonia,Europe,1991,20,August,Soviet Union
+Eswatini (Swaziland),Africa,1968,6,September,United Kingdom
+Ethiopia,Africa,1942,31,January ,Italy
+Fiji,Oceania,1970,10,October,United Kingdom
+Finland,Europe,1917,6,December,Russia
+France,Europe,NA,NA,NA,NA
+Gabon,Africa,1960,17,August,France
+Gambia,Africa,1965,18,February ,United Kingdom
+Georgia,Asia,1991,9,April,Soviet Union
+Germany,Europe,NA,NA,NA,NA
+Ghana,Africa,1957,6,March,United Kingdom
+Greece,Europe,1821,25,March,Ottoman Empire
+Grenada,North America,1974,7,February ,United Kingdom
+Guatemala,North America,1821,15,September,Spain
+Guinea,Africa,1958,2,October,France
+Guinea-Bissau,Africa,1973,24,September,Portugal
+Guyana,South America,1966,26,May,United Kingdom
+Haiti,North America,1804,1,January ,France
+Honduras,North America,1821,15,September,Spain
+Hungary,Europe,1918,31,October,Austria-Hungary
+Iceland,Europe,1944,17,June,Denmark
+India,Asia,1947,15,August,United Kingdom
+Indonesia,Asia,1945,17,August,Netherlands
+Iran,Asia,NA,NA,NA,NA
+Iraq,Asia,1932,3,October,United Kingdom
+Ireland,Europe,1921,6,December,United Kingdom
+Israel,Asia,1948,14,May,United Kingdom
+Italy,Europe,1861,17,March,Austria
+Jamaica,North America,1962,6,August,United Kingdom
+Japan,Asia,1951,11,February ,United States
+Jordan,Asia,1946,25,May,United Kingdom
+Kazakhstan,Asia,1991,16,December,Soviet Union
+Kenya,Africa,1963,12,December,United Kingdom
+Kiribati,Oceania,1979,12,July,United Kingdom
+Korea North,Asia,1945,15,August,Japan
+Korea South,Asia,1945,15,August,Japan
+Kosovo,Europe,2008,17,February ,Serbia
+Kuwait,Asia,1961,19,June,United Kingdom
+Kyrgyzstan,Asia,1991,31,August,Soviet Union
+Laos,Asia,1953,22,October,France
+Latvia,Europe,1991,21,August,Soviet Union
+Lebanon,Asia,1943,22,November,France
+Lesotho,Africa,1966,4,October,United Kingdom
+Liberia,Africa,1847,26,July,United States
+Libya,Africa,1951,24,December,United Kingdom
+Liechtenstein,Europe,1719,23,January ,The Holy Roman Empire
+Lithuania,Europe,1991,11,March,Soviet Union
+Luxembourg,Europe,1867,23,June,France
+Madagascar,Africa,1960,26,June,France
+Malawi,Africa,1964,6,July,United Kingdom
+Malaysia,Asia,1957,31,August,United Kingdom
+Maldives,Asia,1965,26,July,United Kingdom
+Mali,Africa,1960,22,September,France
+Malta,Europe,1964,21,September,United Kingdom
+Marshall Islands,Oceania,1986,21,October,United States
+Mauritania,Africa,1960,28,November,France
+Mauritius,Africa,1968,12,March,United Kingdom
+Mexico,North America,1810,16,September,Spain
+Micronesia,Oceania,1986,3,November,United States
+Moldova,Europe,1991,27,August,Soviet Union
+Monaco,Europe,1814,17,May,France
+Mongolia,Asia,1921,11,July,China
+Montenegro,Europe,2006,3,June,Serbia and Montenegro
+Morocco,Africa,1956,2,March,France
+Mozambique,Africa,1975,25,June,Portugal
+Myanmar,Asia,1948,4,January ,United Kingdom
+Namibia,Africa,1990,21,March,South Africa
+Nauru,Oceania,1968,31,January ,Australia
+Nepal,Asia,1923,21,December,NA
+Netherlands,Europe,1813,5,May,Spain
+New Zealand,Oceania,1947,26,September,United Kingdom
+Nicaragua,North America,1821,15,September,Spain
+Niger,Africa,1960,3,August,France
+Nigeria,Africa,1960,1,October,United Kingdom
+North Macedonia,Europe,1991,8,September,Yugoslavia
+Norway,Europe,1905,7,June,Sweden
+Oman,Asia,1650,18,November,Portugal
+Pakistan,Asia,1947,14,August,United Kingdom
+Palau,Oceania,1994,1,October,United States
+Palestine,Asia,1988,15,November,Israel
+Panama,North America,1903,3,November,Colombia
+Papua New Guinea,Oceania,1975,16,September,Australia
+Paraguay,South America,1811,14,May,Spain
+Peru,South America,1821,28,July,Spain
+Philippines,Asia,1946,4,July,United States
+Poland,Europe,1918,11,November,Germany
+Portugal,Europe,1143,5,October,Moorish occupation
+Qatar,Asia,1971,3,September,United Kingdom
+Romania,Europe,1877,9,May,Ottoman Empire
+Russia,Europe,1991,25,December,Soviet Union
+Rwanda,Africa,1962,1,July,Belgium
+Saint Kitts and Nevis,North America,1983,19,September,United Kingdom
+Saint Lucia,North America,1979,22,February ,United Kingdom
+Saint Vincent and the Grenadines,North America,1979,27,October,United Kingdom
+Samoa,Oceania,1962,1,January ,New Zealand
+San Marino,Europe,301,3,September,Independent
+Sao Tome and Principe,Africa,1975,12,July,Portugal
+Saudi Arabia,Asia,1932,23,September,Unified
+Senegal,Africa,1960,4,April,France
+Serbia,Europe,2006,5,June,Serbia and Montenegro
+Seychelles,Africa,1976,29,June,United Kingdom
+Sierra Leone,Africa,1961,27,April,United Kingdom
+Singapore,Asia,1965,9,August,Malaysia
+Slovakia,Europe,1993,1,January ,Czechoslovakia
+Slovenia,Europe,1991,25,June,Yugoslavia
+Solomon Islands,Oceania,1978,7,July,United Kingdom
+Somalia,Africa,1960,1,July,United Kingdom
+South Africa,Africa,1910,31,May,United Kingdom
+South Sudan,Africa,2011,9,July,Sudan
+Spain,Europe,1492,12,October,Moorish occupation
+Sri Lanka,Asia,1948,4,February ,United Kingdom
+Sudan,Africa,1956,1,January ,United Kingdom
+Suriname,South America,1975,25,November,Netherlands
+Sweden,Europe,1523,6,June,Denmark
+Switzerland,Europe,1291,1,August,Holy Roman Empire
+Syria,Asia,1946,17,April,France
+Taiwan,Asia,1945,25,October,Japan
+Tajikistan,Asia,1991,9,September,Soviet Union
+Tanzania,Africa,1961,9,December,United Kingdom
+Thailand,Asia,NA,NA,NA,NA
+Timor-Leste,Asia,2002,20,May,Indonesia
+Togo,Africa,1960,27,April,France
+Tonga,Oceania,1970,4,June,United Kingdom
+Trinidad and Tobago,North America,1962,31,August,United Kingdom
+Tunisia,Africa,1956,20,March,France
+Turkey,Europe,1923,29,October,Ottoman Empire
+Turkmenistan,Asia,1991,27,October,Soviet Union
+Tuvalu,Oceania,1978,1,October,United Kingdom
+Uganda,Africa,1962,9,October,United Kingdom
+Ukraine,Europe,1991,24,August,Soviet Union
+United Arab Emirates,Asia,1971,2,December,United Kingdom
+United Kingdom,Europe,NA,NA,NA,NA
+United States,North America,1776,4,July,United Kingdom
+Uruguay,South America,1825,25,August,Brazil
+Uzbekistan,Asia,1991,1,September,Soviet Union
+Vanuatu,Oceania,1980,30,July,France
+Vatican City,Europe,1929,11,February ,Italy
+Venezuela,South America,1811,5,July,Spain
+Vietnam,Asia,1945,2,September,Japan
+Yemen,Asia,1990,22,May,Yemen
+Zambia,Africa,1964,24,October,United Kingdom
+Zimbabwe,Africa,1980,18,April,United Kingdom
