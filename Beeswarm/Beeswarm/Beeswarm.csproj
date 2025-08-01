@@ -1,0 +1,142 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
+
+		<!-- Note for MacCatalyst:
+		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
+		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
+		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
+		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
+		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Beeswarm</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Display name -->
+		<ApplicationTitle>Beeswarm</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.beeswarm</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
+		<WindowsPackageType>None</WindowsPackageType>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiAsset Remove="Resources\Raw\Amazon.csv" />
+	  <MauiAsset Remove="Resources\Raw\Facebook1.csv" />
+	  <MauiAsset Remove="Resources\Raw\Google.csv" />
+	  <MauiAsset Remove="Resources\Raw\independence_data.csv" />
+	  <MauiAsset Remove="Resources\Raw\Netflix.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\amazon.png" />
+	  <MauiImage Remove="Resources\Images\belgium.png" />
+	  <MauiImage Remove="Resources\Images\brazil.png" />
+	  <MauiImage Remove="Resources\Images\canada.png" />
+	  <MauiImage Remove="Resources\Images\chile.png" />
+	  <MauiImage Remove="Resources\Images\china.png" />
+	  <MauiImage Remove="Resources\Images\denmark.png" />
+	  <MauiImage Remove="Resources\Images\finland.png" />
+	  <MauiImage Remove="Resources\Images\france.png" />
+	  <MauiImage Remove="Resources\Images\germany.png" />
+	  <MauiImage Remove="Resources\Images\google.png" />
+	  <MauiImage Remove="Resources\Images\google1.png" />
+	  <MauiImage Remove="Resources\Images\hongkong.png" />
+	  <MauiImage Remove="Resources\Images\india.png" />
+	  <MauiImage Remove="Resources\Images\indonesia.png" />
+	  <MauiImage Remove="Resources\Images\iran.png" />
+	  <MauiImage Remove="Resources\Images\israel.png" />
+	  <MauiImage Remove="Resources\Images\italy.png" />
+	  <MauiImage Remove="Resources\Images\japan.png" />
+	  <MauiImage Remove="Resources\Images\kuwait.png" />
+	  <MauiImage Remove="Resources\Images\malaysia.png" />
+	  <MauiImage Remove="Resources\Images\mexico.png" />
+	  <MauiImage Remove="Resources\Images\netflix.png" />
+	  <MauiImage Remove="Resources\Images\netflix1.png" />
+	  <MauiImage Remove="Resources\Images\netherlands.png" />
+	  <MauiImage Remove="Resources\Images\norway.png" />
+	  <MauiImage Remove="Resources\Images\philippines.png" />
+	  <MauiImage Remove="Resources\Images\poland.png" />
+	  <MauiImage Remove="Resources\Images\qatar.png" />
+	  <MauiImage Remove="Resources\Images\russia.png" />
+	  <MauiImage Remove="Resources\Images\saudiarabia.png" />
+	  <MauiImage Remove="Resources\Images\singapore.png" />
+	  <MauiImage Remove="Resources\Images\southafrica.png" />
+	  <MauiImage Remove="Resources\Images\southkorea.png" />
+	  <MauiImage Remove="Resources\Images\spain.png" />
+	  <MauiImage Remove="Resources\Images\sweden.png" />
+	  <MauiImage Remove="Resources\Images\switzerland.png" />
+	  <MauiImage Remove="Resources\Images\taiwan.png" />
+	  <MauiImage Remove="Resources\Images\thailand.png" />
+	  <MauiImage Remove="Resources\Images\turkey.png" />
+	  <MauiImage Remove="Resources\Images\unitedarabemirates.png" />
+	  <MauiImage Remove="Resources\Images\unitedkingdom.png" />
+	  <MauiImage Remove="Resources\Images\unitedstates.png" />
+	  <MauiImage Remove="Resources\Images\vietnam.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\amazon.png" />
+	  <EmbeddedResource Include="Resources\Images\google.png" />
+	  <EmbeddedResource Include="Resources\Images\google1.png" />
+	  <EmbeddedResource Include="Resources\Images\netflix.png" />
+	  <EmbeddedResource Include="Resources\Images\netflix1.png" />
+	  <EmbeddedResource Include="Resources\Raw\Amazon.csv" />
+	  <EmbeddedResource Include="Resources\Raw\Netflix.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Raw\Facebook1.csv" />
+	  <EmbeddedResource Include="Resources\Raw\Google.csv" />
+	  <EmbeddedResource Include="Resources\Raw\independence_data.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+	</ItemGroup>
+
+</Project>
