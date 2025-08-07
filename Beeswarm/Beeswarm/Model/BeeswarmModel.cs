@@ -3,7 +3,7 @@
 namespace Beeswarm
 {
     public class BeeswarmModel
-    { 
+    {
         public DateTime Date { get; set; }
         public decimal Open { get; set; }
         public decimal High { get; set; }
@@ -12,20 +12,12 @@ namespace Beeswarm
         public decimal AdjClose { get; set; }
         public long Volume { get; set; }
         public string Company { get; set; }
-         
-        public double XPosition { get; set; }
-        public bool IsCrashPeriod { get; set; } 
-        public IImage? CompanyLogo { get; set; } 
-        public decimal DailyVolatility => High - Low; 
-        public decimal DailyChangeAmount => Close - Open;
-        public decimal DailyChangePercent => Open != 0 ? (Close - Open) / Open * 100 : 0;
 
-        public decimal ClosePrice => Close; 
-        public decimal Volatility => DailyVolatility; 
-        public string FormattedDate => Date.ToString("MMM dd, yyyy");
+        public double XPosition { get; set; }
+        public IImage? CompanyLogo { get; set; }
+
+        public decimal DailyVolatility => High - Low;
         public string FormattedVolatility => $"${DailyVolatility:F2}";
-        public string FormattedClosePrice => $"${Close:F2}";
-        public string TooltipText => $"{Company}\n{FormattedDate}\nClose: {FormattedClosePrice}\nVolatility: {FormattedVolatility}";
 
         // Constructor for creating stock data
         public BeeswarmModel(
@@ -49,7 +41,6 @@ namespace Beeswarm
 
             // Initialize visualization properties with defaults
             XPosition = 0.5; // Default to center
-            IsCrashPeriod = false;
             CompanyLogo = null;
         }
 
@@ -58,7 +49,6 @@ namespace Beeswarm
         {
             Company = string.Empty;
             XPosition = 0.5;
-            IsCrashPeriod = false;
             CompanyLogo = null;
         }
     }

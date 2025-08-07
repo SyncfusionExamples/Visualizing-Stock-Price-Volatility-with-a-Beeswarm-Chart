@@ -8,9 +8,10 @@ namespace Beeswarm
         {
             InitializeComponent();
             BindingContext = new BeeswarmViewModel();
-        }  
+        }
+
     }
-    
+
     public class ScatterExt : ScatterSeries
     {
         protected override ChartSegment CreateSegment()

@@ -116,17 +116,13 @@
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\Images\amazon.png" />
 	  <EmbeddedResource Include="Resources\Images\google.png" />
-	  <EmbeddedResource Include="Resources\Images\google1.png" />
 	  <EmbeddedResource Include="Resources\Images\netflix.png" />
-	  <EmbeddedResource Include="Resources\Images\netflix1.png" />
 	  <EmbeddedResource Include="Resources\Raw\Amazon.csv" />
 	  <EmbeddedResource Include="Resources\Raw\Netflix.csv" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Raw\Facebook1.csv" />
 	  <EmbeddedResource Include="Resources\Raw\Google.csv" />
-	  <EmbeddedResource Include="Resources\Raw\independence_data.csv" />
 	</ItemGroup>
 
 	<ItemGroup>

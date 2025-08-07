@@ -24,7 +24,7 @@
                 <Shadow Brush="Black" Offset="0,3" Radius="8" Opacity="0.5" />
             </Border.Shadow>
 
-            <chart:SfCartesianChart HorizontalOptions="Fill" 
+            <chart:SfCartesianChart HorizontalOptions="Fill" Margin="0,0,0,15"
                                 VerticalOptions="FillAndExpand"
                                 BackgroundColor="White">
 
@@ -182,28 +182,17 @@
 
                 <!-- X-Axis Configuration -->
                 <chart:SfCartesianChart.XAxes>
-                    <chart:NumericalAxis Minimum="0" 
-                                     Maximum="1" 
-                                     ShowMajorGridLines="False"
-                                     ShowMinorGridLines="False" IsVisible="False">
-                        <chart:NumericalAxis.Title>
-                            <chart:ChartAxisTitle Text="Company Segments" 
-                                              TextColor="#34495E"
-                                              FontSize="{OnPlatform Android=10, Default=12, iOS=10}"/>
-                        </chart:NumericalAxis.Title>
-                        <chart:NumericalAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle TextColor="#7F8C8D" 
-                                                   FontSize="{OnPlatform Android=9, Default=10, iOS=9}"/>
-                        </chart:NumericalAxis.LabelStyle>
-                        <chart:NumericalAxis.AxisLineStyle>
-                            <chart:ChartLineStyle Stroke="#BDC3C7" StrokeWidth="1"/>
-                        </chart:NumericalAxis.AxisLineStyle>
+                    <chart:NumericalAxis  Minimum="0" 
+                                          Maximum="1" 
+                                          IsVisible="False" 
+                                          ShowMajorGridLines="False"> 
                     </chart:NumericalAxis>
+
                 </chart:SfCartesianChart.XAxes>
 
                 <!-- Y-Axis Configuration -->
                 <chart:SfCartesianChart.YAxes>
-                    <chart:NumericalAxis Minimum="3" 
+                    <chart:NumericalAxis Minimum="3"  
                         Maximum="{Binding GetYAxisMaximum}"
                         ShowMajorGridLines="True"
                         ShowMinorGridLines="False">
@@ -281,7 +270,7 @@
                                     XBindingPath="XPosition"
                                     YBindingPath="DailyVolatility"
                                     Fill="{Binding GoogleColor}"
-                                    Stroke="#1976D2"
+                                    Stroke="LightGreen"
                                     StrokeWidth="5"
                                     PointHeight="12"
                                     PointWidth="12"
@@ -290,7 +279,7 @@
                                     EnableAnimation="True">
                     <local:ScatterExt.TooltipTemplate>
                         <DataTemplate>
-                            <Border BackgroundColor="#1976D2"
+                            <Border BackgroundColor="LightGreen"
 StrokeShape="RoundRectangle 6"
 Padding="8,6">
                                 <StackLayout Spacing="2">
@@ -376,32 +365,32 @@ FontAttributes="Bold"/>
                     <!-- Google Card -->
                     <!-- Google Card -->
                     <!-- Google Card -->
-                    <Border BackgroundColor="#E3F2FD" 
-StrokeShape="RoundRectangle 6"
-StrokeThickness="1"
-Stroke="{Binding GoogleColor}"
-Padding="8,6"
-HorizontalOptions="FillAndExpand">
+                    <Border BackgroundColor="#e5fbe5" 
+                            StrokeShape="RoundRectangle 6"
+                            StrokeThickness="1"
+                            Stroke="LightGreen"
+                            Padding="8,6"
+                            HorizontalOptions="FillAndExpand">      
                         <StackLayout Orientation="Horizontal" Spacing="6">
-                            <BoxView Color="{Binding GoogleColor}"
-        WidthRequest="3" 
-        HeightRequest="20"
-        VerticalOptions="Center"
-        CornerRadius="1"/>
+                            <BoxView Color="Green"
+                                        WidthRequest="3" 
+                                        HeightRequest="20"
+                                        VerticalOptions="Center"
+                                        CornerRadius="1"/>
                             <Grid ColumnDefinitions="0.2*,0.8*"  WidthRequest="450">
                                 <StackLayout Grid.Column="0" Spacing="1">
-                                    <Label Text="Google" 
-                FontAttributes="Bold"
-                FontSize="{OnPlatform Android=10, Default=11, iOS=10}"
-                TextColor="#1976D2"/>
+                                        <Label Text="Google" 
+                                            FontAttributes="Bold"
+                                            FontSize="{OnPlatform Android=10, Default=11, iOS=10}"
+                                            TextColor="Green"/>
                                     <Label Text="2018 Q1" 
-                FontSize="{OnPlatform Android=8, Default=9, iOS=8}"
-                TextColor="#666666"/>
+                                            FontSize="{OnPlatform Android=8, Default=9, iOS=8}"
+                                            TextColor="#666666"/>
                                 </StackLayout>
                                 <Label Grid.Column="1" Margin="0,6,0,0"
-            Text="Leader in Search Engine Market" HorizontalOptions="End"
-            FontSize="{OnPlatform Android=8, Default=10, iOS=8}"
-            TextColor="#3E3E3E"/>
+                                            Text="Leader in Search Engine Market" HorizontalOptions="End"
+                                            FontSize="{OnPlatform Android=8, Default=10, iOS=8}"
+                                            TextColor="#3E3E3E"/>
                             </Grid>
                         </StackLayout>
                     </Border>
