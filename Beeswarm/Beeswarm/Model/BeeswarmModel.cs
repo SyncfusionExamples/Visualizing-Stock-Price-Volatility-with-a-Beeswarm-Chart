@@ -12,10 +12,8 @@ namespace Beeswarm
         public decimal AdjClose { get; set; }
         public long Volume { get; set; }
         public string Company { get; set; }
-
         public double XPosition { get; set; }
         public IImage? CompanyLogo { get; set; }
-
         public decimal DailyVolatility => High - Low;
         public string FormattedVolatility => $"${DailyVolatility:F2}";
 
