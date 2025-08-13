@@ -93,11 +93,6 @@ namespace Beeswarm
             foreach (var stock in clusteredGoogleData) GoogleData.Add(stock);
             foreach (var stock in clusteredAmazonData) AmazonData.Add(stock);
             foreach (var stock in clusteredNetflixData) NetflixData.Add(stock);
-
-            Console.WriteLine($"Google data processed: {GoogleData.Count} points (X: {GOOGLE_MIN_X:F2} - {GOOGLE_MAX_X:F2})");
-            Console.WriteLine($"Amazon data processed: {AmazonData.Count} points (X: {AMAZON_MIN_X:F2} - {AMAZON_MAX_X:F2})");
-            Console.WriteLine($"Netflix data processed: {NetflixData.Count} points (X: {NETFLIX_MIN_X:F2} - {NETFLIX_MAX_X:F2})");
-            Console.WriteLine($"Total volatility range: ${MinVolatility:F2} - ${MaxVolatility:F2}");
         }
 
         /// <summary>
@@ -130,7 +125,6 @@ namespace Beeswarm
                 placedPoints.Add((finalPosition.pixelX, finalPosition.pixelY, stock));
             }
 
-            Console.WriteLine($"{companyName} clustering completed: {sortedData.Count} points in range [{minX:F2}, {maxX:F2}]");
             return sortedData;
         }
 
@@ -236,7 +230,6 @@ namespace Beeswarm
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading logo {resourcePath}: {ex.Message}");
                 return null;
             }
         }
@@ -272,7 +265,6 @@ namespace Beeswarm
                 using Stream? inputStream = executingAssembly.GetManifestResourceStream(resourcePath);
                 if (inputStream == null)
                 {
-                    Console.WriteLine($"CSV file not found: {resourcePath}");
                     return GetSampleData(companyName);
                 }
 
@@ -282,7 +274,6 @@ namespace Beeswarm
                 string? headerLine = reader.ReadLine();
                 if (headerLine == null)
                 {
-                    Console.WriteLine($"Empty CSV file: {fileName}");
                     return GetSampleData(companyName);
                 }
 
@@ -305,12 +296,10 @@ namespace Beeswarm
                     }
                 }
 
-                Console.WriteLine($"Successfully loaded {stockData.Count} records from {fileName}");
                 return stockData;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error reading CSV file {fileName}: {ex.Message}");
                 return GetSampleData(companyName);
             }
         }
@@ -409,18 +398,6 @@ namespace Beeswarm
             }
 
             return sampleData;
-        }
-
-        public double GetYAxisMinimum()
-        {
-            double min = (double)MinVolatility;
-            return min - (min * 0.1);
-        }
-
-        public double GetYAxisMaximum()
-        {
-            double max = (double)MaxVolatility;
-            return max + (max * 0.1);
         }
     }
 }

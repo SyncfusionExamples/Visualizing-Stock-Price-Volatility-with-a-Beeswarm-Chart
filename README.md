@@ -8,10 +8,10 @@ A beeswarm chart is a specialized data visualization technique that displays ind
 
 **Purpose**:
 
-**Stock Analysis**: Perfect for visualizing stock price distributions over time periods
-**Market Comparison**: Compare multiple companies' trading ranges simultaneously
-**Volatility Patterns**: Identify periods of high/low price volatility through point density
-**Outlier Detection**: Easily spot unusual trading prices that deviate from normal ranges
+**Stock Analysis**: Perfect for visualizing stock price distributions over time periods.    
+**Market Comparison**: Compare multiple companies' trading ranges simultaneously.   
+**Volatility Patterns**: Identify periods of high/low price volatility through point density.   
+**Outlier Detection**: Easily spot unusual trading prices that deviate from normal ranges.
 
 This blog will get the output that resembles the following image.
 ![beeswarm](https://github.com/user-attachments/assets/0e177704-0c55-4a9d-baa0-6c1e2ff17a14)
