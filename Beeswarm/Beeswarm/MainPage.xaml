@@ -270,7 +270,7 @@
                                     XBindingPath="XPosition"
                                     YBindingPath="DailyVolatility"
                                     Fill="{Binding GoogleColor}"
-                                    Stroke="LightGreen"
+                                    Stroke="Green"
                                     StrokeWidth="5"
                                     PointHeight="12"
                                     PointWidth="12"
@@ -279,7 +279,7 @@
                                     EnableAnimation="True">
                     <local:ScatterExt.TooltipTemplate>
                         <DataTemplate>
-                            <Border BackgroundColor="LightGreen"
+                            <Border BackgroundColor="Green"
 StrokeShape="RoundRectangle 6"
 Padding="8,6">
                                 <StackLayout Spacing="2">
@@ -368,7 +368,7 @@ FontAttributes="Bold"/>
                     <Border BackgroundColor="#e5fbe5" 
                             StrokeShape="RoundRectangle 6"
                             StrokeThickness="1"
-                            Stroke="LightGreen"
+                            Stroke="Green"
                             Padding="8,6"
                             HorizontalOptions="FillAndExpand">      
                         <StackLayout Orientation="Horizontal" Spacing="6">

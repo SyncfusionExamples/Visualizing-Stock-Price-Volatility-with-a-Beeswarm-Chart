@@ -130,9 +130,6 @@ namespace Beeswarm
                 placedPoints.Add((finalPosition.pixelX, finalPosition.pixelY, stock));
             }
 
-            // Apply overlap correction within the same range
-            FixOverlappingPointsInRange(sortedData, minPixelX, maxPixelX);
-
             Console.WriteLine($"{companyName} clustering completed: {sortedData.Count} points in range [{minX:F2}, {maxX:F2}]");
             return sortedData;
         }
@@ -177,102 +174,6 @@ namespace Beeswarm
             // Clamp to range if no position found
             double clampedX = Math.Max(minPixelX, Math.Min(maxPixelX, preferredPixelX));
             return (clampedX, pixelY);
-        }
-
-        /// <summary>
-        /// Fix overlapping points within the specified range
-        /// </summary>
-        private void FixOverlappingPointsInRange(List<BeeswarmModel> data, double minPixelX, double maxPixelX)
-        {
-            bool foundOverlaps = true;
-            int maxIterations = 5;
-            int iteration = 0;
-
-            while (foundOverlaps && iteration < maxIterations)
-            {
-                foundOverlaps = false;
-                iteration++;
-
-                for (int i = 0; i < data.Count - 1; i++)
-                {
-                    for (int j = i + 1; j < data.Count; j++)
-                    {
-                        var pointA = data[i];
-                        var pointB = data[j];
-
-                        double pixelXA = pointA.XPosition * CHART_WIDTH_PIXELS;
-                        double pixelYA = CalculateNormalizedY(pointA.DailyVolatility) * CHART_HEIGHT_PIXELS;
-                        double pixelXB = pointB.XPosition * CHART_WIDTH_PIXELS;
-                        double pixelYB = CalculateNormalizedY(pointB.DailyVolatility) * CHART_HEIGHT_PIXELS;
-
-                        double distance = CalculateDistance(pixelXA, pixelYA, pixelXB, pixelYB);
-
-                        if (distance < OVERLAP_DETECTION_RADIUS)
-                        {
-                            foundOverlaps = true;
-
-                            // Move the second point to available space within range
-                            var newPosition = FindAvailableSpaceInRange(pointB, data, j, minPixelX, maxPixelX);
-                            if (newPosition.HasValue)
-                            {
-                                pointB.XPosition = newPosition.Value;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Find available space within the specified range
-        /// </summary>
-        private double? FindAvailableSpaceInRange(BeeswarmModel point, List<BeeswarmModel> allPoints, int excludeIndex, double minPixelX, double maxPixelX)
-        {
-            double pixelY = CalculateNormalizedY(point.DailyVolatility) * CHART_HEIGHT_PIXELS;
-            double currentPixelX = point.XPosition * CHART_WIDTH_PIXELS;
-
-            double maxMoveDistance = (maxPixelX - minPixelX) * 0.4;
-
-            for (double moveDistance = MIN_MOVE_DISTANCE; moveDistance <= maxMoveDistance; moveDistance += MIN_MOVE_DISTANCE * 0.5)
-            {
-                // Try moving left within range
-                double leftX = currentPixelX - moveDistance;
-                if (leftX >= minPixelX && IsPositionAvailableInRange(leftX, pixelY, allPoints, excludeIndex))
-                {
-                    return leftX / CHART_WIDTH_PIXELS;
-                }
-
-                // Try moving right within range
-                double rightX = currentPixelX + moveDistance;
-                if (rightX <= maxPixelX && IsPositionAvailableInRange(rightX, pixelY, allPoints, excludeIndex))
-                {
-                    return rightX / CHART_WIDTH_PIXELS;
-                }
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Check if position is available within range
-        /// </summary>
-        private bool IsPositionAvailableInRange(double testPixelX, double testPixelY, List<BeeswarmModel> allPoints, int excludeIndex)
-        {
-            for (int i = 0; i < allPoints.Count; i++)
-            {
-                if (i == excludeIndex) continue;
-
-                double otherPixelX = allPoints[i].XPosition * CHART_WIDTH_PIXELS;
-                double otherPixelY = CalculateNormalizedY(allPoints[i].DailyVolatility) * CHART_HEIGHT_PIXELS;
-
-                double distance = CalculateDistance(testPixelX, testPixelY, otherPixelX, otherPixelY);
-
-                if (distance < OVERLAP_DETECTION_RADIUS)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
 
         /// <summary>
