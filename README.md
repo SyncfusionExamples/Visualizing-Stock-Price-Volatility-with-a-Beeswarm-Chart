@@ -22,4 +22,4 @@ This blog will get the output that resembles the following image.
 
 If you are facing a path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project.
 
-For a step-by-step procedure, refer to the [Visualizing Stock Data Distribution Using Syncfusion .NET MAUI Beeswarm Chart](#).
+For a step-by-step procedure, refer to the [Visualizing Stock Data Distribution Using Syncfusion .NET MAUI Beeswarm Chart](https://www.syncfusion.com/blogs/post/dotnet-maui-beeswarm-chart-volatility).
